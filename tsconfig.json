@@ -1,0 +1,29 @@
+{
+  "include": [
+    "**/*.ts",
+    "src/node_modules"
+  ],
+  "exclude": [
+    "node_modules/*",
+    "__sapper__/*",
+    "public/*"
+  ],
+  "compilerOptions": {
+    "module": "ESNext",
+    "target": "ES6",
+    "types": [
+      "svelte"
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    },
+    "lib": [
+      "es2019",
+      "es2020",
+      "dom"
+    ]
+  }
+}
