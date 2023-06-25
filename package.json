@@ -12,6 +12,7 @@
   },
   "exports": {
     "./dp": "./src/scss/dp.scss",
+    "./components": "./src/components.ts",
     "./theme-generator": "./theme-generator.js"
   },
   "repository": {
