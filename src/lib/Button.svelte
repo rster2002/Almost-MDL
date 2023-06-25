@@ -34,9 +34,9 @@ onMount(() => {
 </script>
 
 <style lang="scss">
-@import "../dp";
-@import "../typescale";
-@import "../state-layer";
+@import "../scss/dp";
+@import "../scss/typescale";
+@import "../scss/state-layer";
 
 button {
     height: dp(40);
