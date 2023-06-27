@@ -177,11 +177,11 @@ function onClick() {
             &.selected {
                 color: color.use(--md-sys-color-on-inverse-surface);
                 background-color: color.use(--md-sys-color-inverse-surface);
+                border-color: transparent;
 
                 &:disabled {
                     background-color: color.use(--md-sys-color-on-surface, 0.12);
                     color: color.use(--md-sys-color-on-surface, 0.38);
-                    border-color: transparent;
                 }
             }
         }
