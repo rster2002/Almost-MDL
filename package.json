@@ -11,8 +11,11 @@
     "build": "node ./build.cjs"
   },
   "exports": {
-    "./dp": "./src/scss/dp.scss",
-    "./components": "./src/components.ts",
+    "./actions": "./lib/actions.js",
+    "./communication": "./lib/communication.js",
+    "./inputs": "./lib/inputs.js",
+    "./selection": "./lib/selection.js",
+    "./layout": "./lib/layout.js",
     "./theme-generator": "./theme-generator.js"
   },
   "repository": {

@@ -1,0 +1,3 @@
+@function use($token, $opacity: 1) {
+    @return rgb(var(#{$token}-r) var(#{$token}-g) var(#{$token}-b) / $opacity);
+}

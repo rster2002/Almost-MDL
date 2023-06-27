@@ -15,7 +15,7 @@
 <script lang="ts">
 // Components
 import Button from "./Button.svelte";
-import Spinner from "./Spinner.svelte";
+import Spinner from "../communication/Spinner.svelte";
 
 // Props
 export var asyncClick: <T>() => Promise<T>;
