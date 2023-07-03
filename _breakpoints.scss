@@ -1,4 +1,4 @@
-@import "dp";
+@use "dp";
 
-$compact-breakpoint: dp(600);
-$medium-breakpoint: dp(1240);
+$compact-breakpoint: dp.dp(600);
+$medium-breakpoint: dp.dp(1240);
