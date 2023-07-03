@@ -5,6 +5,7 @@
     {pointer && 'pointer'}
     {focus && 'focus'}
     {active && 'active'}
+    {full && 'full'}
   "
   on:click
 >
@@ -14,11 +15,12 @@
 
 <script lang="ts">
 // Props
-export var focus = false;
-export var active = true;
 export var label: string;
-export var padding = false;
-export var pointer = false;
+export var full: boolean = false;
+export var focus: boolean = false;
+export var active: boolean = true;
+export var padding: boolean = false;
+export var pointer: boolean = false;
 
 // Data
 const id = String(Math.random());
@@ -30,8 +32,6 @@ const id = String(Math.random());
 @use "../../../typescale";
 
 .inputWrapper {
-    width: 100%;
-
     margin: dp.dp(1);
     position: relative;
     box-sizing: border-box;
@@ -43,6 +43,10 @@ const id = String(Math.random());
     background-color: inherit;
 
     @include typescale.use-scale(body-large);
+
+    &.full {
+        width: 100%;
+    }
 
     &.padding {
         padding: 0.75em;

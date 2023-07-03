@@ -1,5 +1,6 @@
 <InputWrapper
   {label}
+  {full}
   focus={focussed}
   active={focussed || (value !== '' && value !== null && value !== undefined)}
   let:id
@@ -14,6 +15,7 @@ import InputWrapper from "./InputWrapper.svelte";
 // Props
 export var label: string;
 export var value: unknown;
+export var full: boolean = false;
 
 // Data
 let focussed = false;
