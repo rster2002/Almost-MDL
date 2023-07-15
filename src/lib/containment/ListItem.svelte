@@ -1,16 +1,20 @@
 <div class="listItem {clickable && 'clickable'}" on:click>
   <div class="start">
-    {#if $$slots.image}
-      <div class="image">
-        <slot name="image" />
+    {#if $$slots.leading}
+      <div class="leading">
+        <slot name="leading" />
       </div>
     {/if}
 
     <div class="text">
-      <p class="headline">{headline}</p>
+      <p class="headline">
+        <slot />
+      </p>
 
-      {#if supporting !== undefined}
-        <p class="supporting">{supporting}</p>
+      {#if $$slots.supporting}
+        <p class="supporting">
+          <slot name="supporting" />
+        </p>
       {/if}
     </div>
   </div>
@@ -24,8 +28,6 @@
 
 <script lang="ts">
 // Props
-export var headline: string;
-export var supporting: string | undefined;
 export var clickable: boolean = false;
 </script>
 
@@ -33,6 +35,7 @@ export var clickable: boolean = false;
 @use "../../../dp";
 @use "../../../typescale";
 @use "../../../state-layer";
+@use "../../../color";
 
 .listItem {
     min-height: dp.dp(56);
@@ -43,20 +46,12 @@ export var clickable: boolean = false;
     gap: dp.dp(16);
     padding: dp.dp(8) dp.dp(24) dp.dp(8) dp.dp(16);
 
-    background-color: var(--md-sys-color-surface);
+    background-color: color.use(--md-sys-color-surface);
 
     .start {
         display: flex;
         flex-direction: row;
-        gap: dp(16);
-
-        .image :global(img) {
-            height: dp(56);
-            width: dp(56);
-
-            display: grid;
-            place-items: center;
-        }
+        gap: dp.dp(16);
 
         .text {
             display: flex;
@@ -77,13 +72,21 @@ export var clickable: boolean = false;
         }
     }
 
-    .tailing {
+    .leading, .tailing {
         display: grid;
         place-items: center;
 
-        :global(.icon) {
-            font-size: dp(24);
-            color: var(--md-sys-color-on-surface-variant);
+        & > :global(img) {
+            height: dp.dp(56);
+            width: dp.dp(56);
+
+            display: grid;
+            place-items: center;
+        }
+
+        & > :global(.icon) {
+            font-size: dp.dp(24);
+            color: color.use(--md-sys-color-on-surface-variant);
         }
     }
 
@@ -96,7 +99,7 @@ export var clickable: boolean = false;
     }
 
     & + :global(.listItem) {
-        border-top: dp(1) solid var(--md-sys-color-surface-variant);
+        border-top: dp.dp(1) solid color.use(--md-sys-color-surface-variant);
     }
 }
 

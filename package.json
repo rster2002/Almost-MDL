@@ -1,6 +1,6 @@
 {
   "name": "almost-mdl",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "type": "module",
   "license": "MIT",
   "homepage": "https://github.com/rster2002/Almost-MDL#readme",
@@ -25,7 +25,7 @@
     "./actions": {
       "types": "./dist/actions/index.d.ts",
       "svelte": "./dist/actions/index.js",
-      "import": "./dist/actions/index.js"
+      "default": "./dist/actions/index.js"
     },
     "./communication": {
       "types": "./dist/communication/index.d.ts",
@@ -43,6 +43,10 @@
       "types": "./dist/layout/index.d.ts",
       "svelte": "./dist/layout/index.js"
     },
+    "./navigation": {
+      "types": "./dist/navigation/index.d.ts",
+      "svelte": "./dist/navigation/index.js"
+    },
     "./selection": {
       "types": "./dist/selection/index.d.ts",
       "svelte": "./dist/selection/index.js"
@@ -50,7 +54,7 @@
   },
   "typesVersions": {
     ">4.0": {
-      "actions": ["./dist/actions/index.d.ts"],
+      "actions": ["./dist/actions.d.ts"],
       "communication": ["./dist/communication/index.d.ts"],
       "containment": ["./dist/containment/index.d.ts"],
       "inputs": ["./dist/inputs/index.d.ts"],
@@ -59,11 +63,13 @@
     }
   },
   "files": [
-    "dist/actions",
+    "dist/actions/index.js",
+    "dist/actions/index.d.ts",
     "dist/communication",
     "dist/containment",
     "dist/inputs",
     "dist/layout",
+    "dist/navigation",
     "dist/selection",
     "_*.scss",
     "!dist/**/*.test.*",
